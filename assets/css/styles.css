@@ -1,0 +1,468 @@
+/* establish basic file settings */
+* {
+    box-sizing: border-box;
+}
+html {
+    height: 100%;
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
+    height: 100%;
+    background-color: #F1F7ED;
+}
+
+/* create the parallax effect for the index page */
+.parallax {
+    
+    min-height: 100%;
+    
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* more basic page settings */
+h2, p {
+    margin: 0;
+}
+p, li {
+    font-size: 16pt;
+}
+h3 {
+    font-size: 22pt;
+}
+footer {
+    padding: 4% 25% 4% 25%;
+    text-align: center;
+}
+
+/* Create the navbar */
+.topnav {
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow: hidden;
+    background-color: #001316;
+}
+.topnav a {
+    float: left;
+    display: block;
+    color: #F1F7ED;
+    text-align: center;
+    padding: 1em;
+    text-decoration: none;
+    font-size: 14pt;
+}
+.topnav a:hover {
+    background-color: #319177;
+}
+nav .active {
+    color: #319177;
+}
+.topnav .icon {
+    display: none;
+}
+
+/* Create the top section on the homepage with the image */
+.top {
+    width: 100%;
+    position: relative;
+    text-align: center;
+    height: auto;
+}
+.top img {
+    width: 100%;
+}
+.topindex h2 {
+    position: absolute;
+    color: #F1F7ED;
+    left: 40%;
+    top: 70%;
+    font-size: 6em;
+    text-shadow: 2px 2px #001316;
+    text-decoration: underline;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: #001316;
+    font-weight: bold;
+    font-size: 18px;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background-color: #F1F7ED;
+}
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+.prev:hover, .next:hover {
+    background-color: #319177;
+}
+
+/* Create the color sections */
+.color3 {
+    background-color: #F1F7ED;
+    min-height: 5em;
+    padding: 3% 25% 10% 25%;
+}
+.color3 h3, .color3 p {
+    color: #001316;
+}
+.color1 {
+    background-color: #319177;
+    color: #F1F7ED;
+    padding: 10% 25% 10% 25%;
+}
+.color2 {
+    background-color: #001316;
+    color: #F1F7ED;
+    padding: 10% 25% 10% 25%;
+}
+
+/* box section on the index page */
+.landicon {
+    width: 49%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    display: inline-block;
+    text-align: center;
+    border: 1px solid #F1F7ED;
+}
+.landicon a {
+    text-decoration: none;
+    color: #F1F7ED;
+    font-size: 16pt;
+}
+.landicon:hover {
+    color: #319177;
+    background-color: #001316;
+    border: 2px solid #F1F7ED;
+}
+
+/* more color boxes on the first page settings */
+.color2 a {
+    text-decoration: none;
+    color: #F1F7ED;
+}
+.color2 a:hover {
+    color: #319177;
+}
+.color3 a {
+    text-decoration: none;
+    color: #001316;
+}
+.color3 a:hover {
+    color: #319177;
+}
+
+.comments {
+    max-height: 100vh;
+    color: #F1F7ED;
+}
+form {
+    color: #001316;
+    margin-top: 5em;
+    text-align: center;
+}
+form label {
+    font-size: 16pt;
+}
+table {
+    padding: 1em;
+    margin: auto;
+    overflow: hidden;
+}
+td {
+    color: #001316;
+    padding: .5em;
+    text-align: left;
+    vertical-align: middle;
+}
+tr {
+    padding: 1em;
+    margin: 1em;
+    border: 3px solid #001316;
+}
+.allComments {
+    color: #001316;
+    text-align: center;
+}
+
+/* Create the timeline for the history page */
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.timeline:after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    background-color: #001316;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+}
+.container {
+    padding: 10px 40px;
+    position: relative;
+    background-color: #F1F7ED;
+    width: 70%;
+}
+.container:after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: -17px;
+    background-color: #F1F7ED;
+    border: 4px solid #001316;
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+}
+.left {
+    left: -20%;
+}
+.right {
+    left: 50%;
+}
+.left:before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    right: 30px;
+    border: medium solid #319177;
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent #319177;;
+}
+.right:before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    left: 30px;
+    border: medium solid #319177;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent #319177 transparent transparent;
+}
+.right:after {
+    left: -16px;
+}
+.content {
+    padding: 20px 30px;
+    background-color: #F1F7ED;
+    border: 2px solid #319177;
+    position: relative;
+    border-radius: 6px;
+}
+#right1 {
+    display: none;
+}
+
+#history {
+    font-size: 36pt;
+    color: #319177;
+}
+
+/* create the down arrow */
+i {
+    border: solid #319177;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+}
+.down-arrow {
+    transform: rotate(45deg);
+}
+
+/* generic page wrapper (limits the width) */
+.page-wrapper {
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-top: 6em;
+}
+
+/* used for the index page header */
+.topindex {
+    margin-top: 5%;
+    text-align: center;
+    width: 100%;
+}
+.top h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #F1F7ED;
+    font-size: 5em;
+    text-shadow: 2px 2px #001316;
+}
+
+/* settings for specific page sections */
+#camptrans {
+    background-color: #F1F7ED;
+    padding: 10% 25% 10% 25%;
+}
+#camptrans h2 {
+    color: #319177;
+    font-size: 26pt;
+    margin-left: -5%;
+}
+
+/* used on most pages, sets sections with different colors */
+.camp1 h2, .camp2 h2, .camp3 h2 {
+    font-size: 26pt;
+    margin-left: -5%;
+}
+.camp1 a {
+    text-decoration: none;
+    color: #319177;
+}
+.camp1 a:hover {
+    color: white;
+}
+.camp3 a {
+    text-decoration: none;
+    color: #001316;
+}
+.camp3 a:hover {
+    color: #F1F7ED;
+}
+.camp1 {
+    background-color: #001316;
+    color: #F1F7ED;
+    padding: 10% 25% 10% 25%;
+    overflow: auto;
+}
+.camp2 {
+    background-color: #F1F7ED;
+    padding: 10% 25% 10% 25%;
+    overflow: auto;
+}
+.camp3 {
+    background-color: #319177;
+    color: #F1F7ED;
+    padding: 10% 25% 10% 25%;
+    overflow: auto;
+}
+.camp2 img {
+    width: 100%;
+}
+
+/* bunch of id's used for images and such */
+#r {
+    text-align: right;
+}
+
+#tower {
+    width: 15em;
+    float: right;
+    padding-left: 1em;
+}
+
+#stone {
+    width: 20em;
+    float: left;
+    padding-right: 1em;
+}
+
+#store {
+    width: 25em;
+    float: right;
+    padding-left: 1em;
+}
+
+#amp {
+    width: 25em;
+    float: left;
+    padding-right: 1em;
+}
+#wetland {
+    width: 100%;
+}
+
+#bear {
+    width: 30em;
+    float: right;
+    padding-left: 1em;
+}
+
+/* media queries */
+@media screen and (max-width: 800px) {
+    .topnav a.icon {
+        float: right;
+        display: block;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .topnav.responsive {position: relative;}
+    .topnav.responsive .icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    .topnav.responsive a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+    .topnav a {
+        display: none;
+    }
+    .topindex h2 {
+        font-size: 3.5em;
+        left: 20%;
+    }
+    .top img {
+        margin-top: 1.5em;
+    }
+    .top h1 {
+        font-size: 24pt;
+    }
+    .page-wrapper {
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .topindex h2 {
+        font-size: 4.5em;
+        left: 20%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .color1, .color2, .color3, .camp1, .camp2, .camp3 {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+    .page-wrapper {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+    .timeline {
+        max-width: 100%;
+    }
+}
